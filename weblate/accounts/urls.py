@@ -40,7 +40,7 @@ social_urls = [
     ),
     # SAML metadata
     url(
-        r'^metadata/(?P<backend>[^/]+)/$',
+        r'^metadata/$',
         weblate.accounts.views.saml_metadata,
         name='metadata',
     ),
