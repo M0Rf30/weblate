@@ -38,6 +38,12 @@ social_urls = [
         weblate.accounts.views.social_complete,
         name='complete',
     ),
+    # SAML metadata
+    url(
+        r'^metadata/(?P<backend>[^/]+)/$',
+        weblate.accounts.views.saml_metadata,
+        name='metadata',
+    ),
     # disconnection
     url(
         r'^disconnect/(?P<backend>[^/]+)/$',
