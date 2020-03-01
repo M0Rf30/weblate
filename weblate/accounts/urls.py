@@ -38,12 +38,6 @@ social_urls = [
         weblate.accounts.views.social_complete,
         name='complete',
     ),
-    # SAML metadata
-    url(
-        r'^metadata/$',
-        weblate.accounts.views.saml_metadata,
-        name='metadata',
-    ),
     # disconnection
     url(
         r'^disconnect/(?P<backend>[^/]+)/$',
@@ -89,6 +83,7 @@ urlpatterns = [
     ),
     url(r'^remove/$', weblate.accounts.views.user_remove, name='remove'),
     url(r'^confirm/$', weblate.accounts.views.confirm, name='confirm'),
+    url(r'^metadata/$', weblate.accounts.views.saml_metadata, name='metadata'),
     url(r'^login/$', weblate.accounts.views.WeblateLoginView.as_view(), name='login'),
     url(r'^register/$', weblate.accounts.views.register, name='register'),
     url(r'^email/$', weblate.accounts.views.email_login, name='email_login'),
